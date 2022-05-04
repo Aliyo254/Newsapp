@@ -1,7 +1,7 @@
 import urllib.request,json
 
 from .models import Source,Articles
-# Source = source.Source
+#Source = source.Source
 # Articles = articles.Articles
 
 # get the api key
@@ -27,7 +27,7 @@ def get_source():
 
     # store the formatted url in get_source_url, send the request, read the response with url....
     # ...read and then store it in get_source_data then convert it to python dictionary using json.loads
-    get_source_url = base_url_source.format(api_key)
+    get_source_url = base_url_source.format('4d53d81675cf44abb350930abd94485d')
     with urllib.request.urlopen(get_source_url) as url:
         get_source_data = url.read()
         get_source_response = json.loads(get_source_data)
@@ -58,7 +58,7 @@ def get_articles(id):
 
     # store the formatted url in get_source_url, send the request, read the response with url....
     # ...read and then store it in get_source_data then convert it to python dictionary using json.loads
-    get_articles_url = base_url_articles.format(id,api_key)
+    get_articles_url = base_url_articles.format(id,'4d53d81675cf44abb350930abd94485d')
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)
