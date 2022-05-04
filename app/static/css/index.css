@@ -1,0 +1,12 @@
+.jumbotron{
+    color:black;
+    text-align: centre;
+    margin: 50px;
+    }
+  .jumbotron:hover{
+    border-style: solid;
+    border-color: red;
+    opacity: 0.5;
+  
+  }
+  
