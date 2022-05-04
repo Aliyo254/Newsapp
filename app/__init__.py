@@ -1,8 +1,10 @@
 from flask import Flask
 from flask_bootstrap import Bootstrap
-# in order to use the configs we import them
-# from .config import DevConfig
+from .main import main as main_blueprint
+from .request import configure_request
 from config import config_options
+
+
 bootstrap = Bootstrap()
 
 def create_app(config_name):
@@ -12,13 +14,13 @@ def create_app(config_name):
 # set up configurations
     app.config.from_object(config_options[config_name])
     # app.config.from_pyfile('config.py')
-    from .main import main as main_blueprint
+    
     app.register_blueprint(main_blueprint)
     # from app import views
     bootstrap.init_app(app)
 
     # setting config
-    from .request import configure_request
+    
     configure_request(app)
 
     return app
